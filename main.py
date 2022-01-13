@@ -57,11 +57,28 @@ def detect():
     for face in faces:
         faceModel = FaceModel(face)
         faceList.append(faceModel)
-    return render_template("detect.html", faces=faceList, image=filename);
 
+    # Start label detection
+    """Detects labels in images."""
+    response = client.label_detection(image=image)
+    labels = response.label_annotations
+
+    # Start landmark detection
+    """Detect Landmarks"""
+    response = client.landmark_detection(image=image)
+    landmarks = response.landmark_annotations
+
+    # Start text detection
+    """Detect Text"""
+    response = client.text_detection(image=image)
+    texts = response.text_annotations
+
+    return render_template("detect.html", faces=faceList, labels=labels, landmarks=landmarks, texts=texts,image=filename);
+
+  
 # start flask app
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5003)
+    app.run(host="0.0.0.0", port=5000)
 
 
 
