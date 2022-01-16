@@ -58,22 +58,7 @@ def detect():
         faceModel = FaceModel(face)
         faceList.append(faceModel)
 
-    # Start label detection
-    """Detects labels in images."""
-    response = client.label_detection(image=image)
-    labels = response.label_annotations
-
-    # Start landmark detection
-    """Detect Landmarks"""
-    response = client.landmark_detection(image=image)
-    landmarks = response.landmark_annotations
-
-    # Start text detection
-    """Detect Text"""
-    response = client.text_detection(image=image)
-    texts = response.text_annotations
-
-    return render_template("detect.html", faces=faceList, labels=labels, landmarks=landmarks, texts=texts,image=filename);
+    return render_template("detect.html", faces=faceList,image=filename);
 
   
 # start flask app

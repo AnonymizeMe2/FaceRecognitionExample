@@ -30,50 +30,7 @@
             {% endfor %}
       </tbody>
     </table>
-     <table class="ui green table">
-        <thead>
-            <tr>
-                <th>Label</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for label in labels %}
-            <tr>
-                <td>{{ label.description }}</td>
-                <td>{{ label.score }}</td>
-            </tr>
-            {% endfor %}
-      </tbody>
-    </table>
- <table class="ui green table">
-        <thead>
-            <tr>
-                <th>Landmark</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for landmark in landmarks %}
-            <tr>
-                <td>{{ landmark.description }}</td>    
-            </tr>
-            {% endfor %}
-      </tbody>
-  </table>
- <table class="ui green table">
-        <thead>
-            <tr>
-              <th>Detected Text</th> 
-            </tr>
-        </thead>
-        <tbody>
-            {% for text in texts %}
-            <tr>
-              <td>{{ text.description }}</td>
-            </tr>
-            {% endfor %}
-      </tbody>
-  </table>
+
 
     
  
